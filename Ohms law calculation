@@ -1,0 +1,23 @@
+# Lab 1: Ohm's Law Calculator
+# Formula: I = V / R
+
+def calculate_current():
+    print("--- Ohm's Law Calculator ---")
+    
+    try:
+        # Taking user input and converting to float for decimal support
+        voltage = float(input("Enter Voltage (V) in Volts: "))
+        resistance = float(input("Enter Resistance (R) in Ohms: "))
+
+        # Calculation based on the formula I = V / R
+        if resistance == 0:
+            print("Error: Resistance cannot be zero (division by zero).")
+        else:
+            current = voltage / resistance
+            print(f"\nThe calculated Current (I) is: {current:.2f} Amperes")
+            
+    except ValueError:
+        print("Invalid input. Please enter numerical values.")
+
+if __name__ == "__main__":
+    calculate_current()
