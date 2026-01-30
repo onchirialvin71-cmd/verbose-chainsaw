@@ -1,0 +1,44 @@
+def main():
+    print("========================================")
+    print("   OHM'S LAW AND POWER CALCULATOR       ")
+    print("========================================")
+    
+    # I. MODIFY CODE TO ALLOW MULTIPLE CALCULATIONS IN A LOOP
+    running = True
+    
+    while running == True:
+        
+        print("\n--- ENTER DATA ---")
+        
+        # II. ADD EXCEPTION HANDLING FOR INVALID INPUTS
+        try:
+            voltage_input = input("Enter the Voltage (V): ")
+            voltage = float(voltage_input)
+            
+            resistance_input = input("Enter the Resistance (R): ")
+            resistance = float(resistance_input)
+            
+            if resistance == 0:
+                print("Error: You cannot divide by zero resistance.")
+            else:
+                current = voltage / resistance
+                
+                # III. EXTEND PROGRAM TO CALCULATE POWER: P = V * I
+                power = voltage * current
+                
+                print("\n--- RESULTS ---")
+                print("Current (I):", current, "Amps")
+                print("Power (P):", power, "Watts")
+        
+        except ValueError:
+            print("Error: Please enter numbers only.")
+
+        print("\n-------------------------")
+        choice = input("Do another calculation? (yes/no): ")
+        
+        if choice.lower() != "yes":
+            running = False
+
+    print("\nProgram closed.")
+
+main()
